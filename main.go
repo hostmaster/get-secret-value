@@ -15,12 +15,12 @@ func main() {
 	var id, stage, region string
 
 	flag.StringVar(&id, "secret-id", "", "Secret Id")
-	flag.StringVar(&stage, "version-stage", "AWSCURRENT", "Specifies the secret version that you want to retrieve (default: AWSCURRENT)")
-	flag.StringVar(&region, "region", "us-east-1", "AWS Region (default: us-east-1)")
+	flag.StringVar(&stage, "version-stage", "AWSCURRENT", "the staging label attached to the version.(default: AWSCURRENT)")
+	flag.StringVar(&region, "region", "", "AWS Region")
 	flag.Parse()
 
 	if len(id) == 0 {
-		fmt.Println("Error: No secret id")
+		fmt.Println("Error: No secret ID specified")
 		os.Exit(1)
 	}
 
